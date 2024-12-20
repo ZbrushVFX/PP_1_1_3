@@ -2,12 +2,16 @@ package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
+import jm.task.core.jdbc.util.LoggerUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
 
 public class UserDaoJDBCImpl implements UserDao {
+    private static final Logger logger = LoggerUtil.getLogger(UserDaoJDBCImpl.class);
+
     public UserDaoJDBCImpl() {
         // TODO document why this constructor is empty
     }
@@ -23,9 +27,9 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Connection conn = Util.getConnection();
              Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(sql);
-            System.out.println("Table 'users' created successfully or already exists");
+            logger.info("Table 'users' created successfully or already exists");
         } catch (SQLException e) {
-            System.out.println("Error creating table: " + e.getMessage());
+            logger.error("Error creating table: {}", e.getMessage());
         }
     }
 
@@ -35,9 +39,9 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Connection conn = Util.getConnection();
              Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(sql);
-            System.out.println("Table 'users' dropped successfully");
+            logger.info("Table 'users' dropped successfully");
         } catch (SQLException e) {
-            System.out.println("Error dropping table: " + e.getMessage());
+            logger.error("Error dropping table: {}", e.getMessage());
         }
     }
 
@@ -52,9 +56,9 @@ public class UserDaoJDBCImpl implements UserDao {
             pstmt.setByte(3, age);
 
             pstmt.executeUpdate();
-            System.out.println("User с именем – " + name + " добавлен в базу данных");
+            logger.info("User с именем {} добавлен в базу данных", name);
         } catch (SQLException e) {
-            System.out.println("Error saving user: " + e.getMessage());
+            logger.error("Error saving user: {}", e.getMessage());
         }
     }
 
@@ -68,12 +72,12 @@ public class UserDaoJDBCImpl implements UserDao {
 
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows > 0) {
-                System.out.println("User с ID " + id + " успешно удален из базы данных");
+                logger.info("User с ID {} успешно удален из базы данных", id);
             } else {
-                System.out.println("User с ID " + id + " не найден в базе данных");
+                logger.info("User с ID {} не найден в базе данных", id);
             }
         } catch (SQLException e) {
-            System.out.println("Error removing user: " + e.getMessage());
+            logger.error("Error removing user: {}", e.getMessage());
         }
     }
 
@@ -93,9 +97,9 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setAge(rs.getByte("age"));
                 users.add(user);
             }
-            System.out.println("Retrieved " + users.size() + " users from the database");
+            logger.info("Retrieved {} users from the database", users.size());
         } catch (SQLException e) {
-            System.out.println("Error retrieving users: " + e.getMessage());
+            logger.error("Error retrieving users: {}", e.getMessage());
         }
         return users;
     }
@@ -108,10 +112,10 @@ public class UserDaoJDBCImpl implements UserDao {
              Statement stmt = conn.createStatement();) {
 
             int rowsAffected = stmt.executeUpdate(cleanTableSQL);
-            System.out.println("Таблица 'users' очищена. Удалено записей: " + rowsAffected);
+            logger.info("Таблица 'users' очищена. Удалено записей: {}", rowsAffected);
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error cleaning users table: {}", e.getMessage());
         }
 
     }

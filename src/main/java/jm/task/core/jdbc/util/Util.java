@@ -3,9 +3,15 @@ package jm.task.core.jdbc.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import org.slf4j.Logger;
 
 
 public class Util {
+    private Util() {
+        throw new UnsupportedOperationException("Utility class should not be instantiated");
+    }
+    private static final Logger logger = LoggerUtil.getLogger(Util.class);
+
     private static final String URL = "jdbc:mysql://localhost:3306/mydb";
     private static final String USERNAME = "user";
     private static final String PASSWORD = "user";
@@ -14,10 +20,9 @@ public class Util {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            System.out.println("Connection to DB succeeded!");
+            logger.info("Connection to DB succeeded!");
         } catch (SQLException e) {
-            System.out.println("Connection failed...");
-            e.printStackTrace();
+            logger.error("Connection failed: {}", e.getMessage());
         }
         return connection;
     }
@@ -26,10 +31,9 @@ public class Util {
         if (connection != null) {
             try {
                 connection.close();
-                System.out.println("Connection closed successfully!");
+                logger.info("Connection closed successfully!");
             } catch (SQLException e) {
-                System.out.println("Error closing connection!");
-                e.printStackTrace();
+                logger.error("Error closing connection!: {}", e.getMessage());
             }
         }
     }
