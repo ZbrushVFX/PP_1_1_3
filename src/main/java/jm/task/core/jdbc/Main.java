@@ -3,16 +3,16 @@ package jm.task.core.jdbc;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
-import jm.task.core.jdbc.util.LoggerUtil;
 import org.slf4j.Logger;
-
+import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        Logger logger = LoggerUtil.getLogger(Main.class);
+        Logger logger = LoggerFactory.getLogger(Main.class);
+
         UserService userService = new UserServiceImpl();
 
         // Создание таблицы User(ов)
@@ -43,6 +43,4 @@ public class Main {
         // Удаление таблицы
         userService.dropUsersTable();
     }
-
-
 }

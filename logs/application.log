@@ -1,0 +1,42 @@
+00:54:12.394 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:12.431 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' dropped successfully
+00:54:12.464 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:12.597 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' created successfully or already exists
+00:54:12.618 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:12.656 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - User с именем Ivan добавлен в базу данных
+00:54:12.677 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:12.697 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Retrieved 1 users from the database
+00:54:12.727 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:12.818 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' dropped successfully
+00:54:12.841 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.014 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' created successfully or already exists
+00:54:13.029 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.054 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - User с именем Ivan добавлен в базу данных
+00:54:13.068 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.097 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - User с ID 1 успешно удален из базы данных
+00:54:13.114 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.364 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' dropped successfully
+00:54:13.382 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.535 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' created successfully or already exists
+00:54:13.549 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.571 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - User с именем Ivan добавлен в базу данных
+00:54:13.586 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.587 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Retrieved 1 users from the database
+00:54:13.602 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.689 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' dropped successfully
+00:54:13.705 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.731 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' dropped successfully
+00:54:13.749 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.764 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' dropped successfully
+00:54:13.782 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:13.922 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' created successfully or already exists
+00:54:13.941 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:14.022 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' dropped successfully
+00:54:14.037 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:14.164 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Table 'users' created successfully or already exists
+00:54:14.179 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:14.247 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - User с именем Ivan добавлен в базу данных
+00:54:14.264 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:14.306 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' очищена. Удалено записей: 1
+00:54:14.318 [main] INFO  jm.task.core.jdbc.util.Util - Connection to DB succeeded!
+00:54:14.319 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Retrieved 0 users from the database

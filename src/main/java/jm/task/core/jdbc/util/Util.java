@@ -4,13 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class Util {
+    private static final Logger logger = LoggerFactory.getLogger(Util.class);
+
     private Util() {
         throw new UnsupportedOperationException("Utility class should not be instantiated");
     }
-    private static final Logger logger = LoggerUtil.getLogger(Util.class);
 
     private static final String URL = "jdbc:mysql://localhost:3306/mydb";
     private static final String USERNAME = "user";

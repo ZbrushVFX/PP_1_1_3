@@ -2,15 +2,14 @@ package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
-import jm.task.core.jdbc.util.LoggerUtil;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private static final Logger logger = LoggerUtil.getLogger(UserDaoJDBCImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserDaoJDBCImpl.class);
 
     public UserDaoJDBCImpl() {
         // TODO document why this constructor is empty
