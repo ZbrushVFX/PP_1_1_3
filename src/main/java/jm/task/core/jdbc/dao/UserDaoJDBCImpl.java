@@ -24,8 +24,8 @@ public class UserDaoJDBCImpl implements UserDao {
                 ")";
 
         try (Connection conn = Util.getConnection();
-             Statement stmt = conn.createStatement()) {
-            stmt.executeUpdate(sql);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.executeUpdate();
             logger.info("Table 'users' created successfully or already exists");
         } catch (SQLException e) {
             logger.error("Error creating table: {}", e.getMessage());
@@ -36,8 +36,8 @@ public class UserDaoJDBCImpl implements UserDao {
         String sql = "DROP TABLE IF EXISTS users";
 
         try (Connection conn = Util.getConnection();
-             Statement stmt = conn.createStatement()) {
-            stmt.executeUpdate(sql);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.executeUpdate();
             logger.info("Table 'users' dropped successfully");
         } catch (SQLException e) {
             logger.error("Error dropping table: {}", e.getMessage());
@@ -82,11 +82,11 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
-        String sql = "SELECT * " + "FROM users";
+        String sql = "SELECT * FROM users";
 
         try (Connection conn = Util.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
                 User user = new User();
@@ -104,18 +104,16 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-
         String cleanTableSQL = "DELETE FROM users";
 
         try (Connection conn = Util.getConnection();
-             Statement stmt = conn.createStatement();) {
+             PreparedStatement pstmt = conn.prepareStatement(cleanTableSQL)) {
 
-            int rowsAffected = stmt.executeUpdate(cleanTableSQL);
+            int rowsAffected = pstmt.executeUpdate();
             logger.info("Таблица 'users' очищена. Удалено записей: {}", rowsAffected);
 
         } catch (SQLException e) {
             logger.error("Error cleaning users table: {}", e.getMessage());
         }
-
     }
 }
